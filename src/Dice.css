@@ -1,0 +1,22 @@
+Dice {
+    background-color: lightcoral ;
+}
+
+.Dice-rolls-wrap {
+    display: flex;
+}
+
+.Dice-btn {
+    border: none;
+    background: none;
+}
+
+.Dice-img {
+    aspect-ratio: 1/1;
+    max-width: 50px;
+    transition: .20s;
+}
+
+.Dice-btn:active > .Dice-img {
+    transform: translate(0px, -10px) scale(1.25);
+}

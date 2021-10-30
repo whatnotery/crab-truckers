@@ -1,0 +1,25 @@
+
+
+function rollDie(bonus,penalty) {
+  let rolls = []
+  const reducer = (previousValue, currentValue) => previousValue + currentValue;
+  if (!bonus && !penalty){
+    for (i = 0; i < 2; i++) {
+     rolls.push((Math.ceil(Math.random() * 8) * i)); 
+    };
+    return rolls
+  };
+};
+  /* let baseResult = 
+       + (Math.ceil(Math.random() * 8));
+  } else if (bonus && !penalty) {
+    baseResult += ((Math.ceil(Math.random() * 8)) * bonus);
+  } else if (penalty && !bonus) {
+    baseResult -= ((Math.ceil(Math.random() * 8)) * penalty);
+    else { total }
+  }; 
+  }; */
+
+rollDie() 
+rollDie() 
+rollDie() 
