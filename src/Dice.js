@@ -18,12 +18,12 @@ class Dice extends Component {
     let highest = 0;
     let secondHighest = 0;
   
-    for (i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (arr[i] > highest) {
         highest = arr[i];
       }
     }
-    for (i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (arr[i] > secondHighest && arr[i] < highest) {
         secondHighest = arr[i];
       }
@@ -31,29 +31,30 @@ class Dice extends Component {
     return [secondHighest, highest];
   }
   
-  
-  
-   rollDie(bonus,penalty) {
+  rollDie(bonus,penalty) {
     let rolls = []
     const reducer = (previousValue, currentValue) => previousValue + currentValue;
     if (!bonus && !penalty){
       
       for (let i = 0; i < 2; i++) { 
         rolls.push(Math.ceil(Math.random() * 8)) * i; 
-      }; this.setState({totalRoll: rolls.reduce(reducer)});
+       }; 
+      this.setState({totalRoll: rolls.reduce(reducer)});
+      return this.setState({totalRoll: rolls.reduce(reducer)});
+      
     } else if (bonus && !penalty) {
        
       for (let i = 0; i < (2 + bonus); i++) {
          rolls.push(Math.ceil(Math.random() * 8)) * i;
-       } console.log(rolls) 
+       }
       return this.twoHighest(rolls).reduce(reducer); 
       
     } else if (!bonus && penalty) {
       
       for (let i = 0; i < (2 + penalty); i++) {
          rolls.push(Math.ceil(Math.random() * 8)) * i;
-       } console.log(rolls) 
-      return res = rolls.sort((a,b) => a - b).slice(0, 2).reduce(reducer);
+       }
+      return rolls.sort((a,b) => a - b).slice(0, 2).reduce(reducer);
     
     } else if (bonus && penalty) {
       
@@ -70,16 +71,6 @@ class Dice extends Component {
       }   
     }
   };
-
-
-
-
-  rollBaseDie() {
-    let baseResult = (Math.ceil(Math.random() * 8)) + (Math.ceil(Math.random() * 8));
-     this.setState({baseRoll:baseResult});
-  }
-
-
 
   render() {
     return (
