@@ -8,9 +8,10 @@ class Dice extends Component {
     this.state = {
       bonusRoll: 0,
       penaltyRoll: 0,
-      totalRoll: 0
-    };
-    this.rollBaseDie = this.rollBaseDie.bind(this);
+      totalRoll: 1
+    }; 
+    this.rollDie = this.rollDie.bind(this);
+    this.twoHighest = this.twoHighest.bind(this);
   }
 
 
@@ -34,25 +35,26 @@ class Dice extends Component {
   rollDie(bonus,penalty) {
     let rolls = []
     const reducer = (previousValue, currentValue) => previousValue + currentValue;
+    console.log("test1")
     if (!bonus && !penalty){
-      
-      for (let i = 0; i < 2; i++) { 
-        rolls.push(Math.ceil(Math.random() * 8)) * i; 
-       }; 
+      console.log("test2")
+      for (let i = 0; i < 2; i++) {
+        rolls.push(Math.ceil(Math.random() * 8)) * i;
+      };
       this.setState({totalRoll: rolls.reduce(reducer)});
-      return this.setState({totalRoll: rolls.reduce(reducer)});
+      
       
     } else if (bonus && !penalty) {
        
       for (let i = 0; i < (2 + bonus); i++) {
-         rolls.push(Math.ceil(Math.random() * 8)) * i;
+       return  rolls.push(Math.ceil(Math.random() * 8)) * i;
        }
       return this.twoHighest(rolls).reduce(reducer); 
       
     } else if (!bonus && penalty) {
       
       for (let i = 0; i < (2 + penalty); i++) {
-         rolls.push(Math.ceil(Math.random() * 8)) * i;
+         return rolls.push(Math.ceil(Math.random() * 8)) * i;
        }
       return rolls.sort((a,b) => a - b).slice(0, 2).reduce(reducer);
     
@@ -60,7 +62,7 @@ class Dice extends Component {
       
       if (bonus === penalty) {
         return this.rollDie()  
-      
+        
       } else if (bonus > penalty) {
         bonus = bonus - penalty;
         return this.rollDie(bonus)
