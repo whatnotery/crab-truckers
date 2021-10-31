@@ -1,0 +1,52 @@
+.PlayerCard {
+    background-color: lightcoral;
+    width: auto;
+    max-width: 250px;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.PlayerCard-avatar {
+    aspect-ratio: 1/1;
+    max-width: 165px;
+    margin: 25px;
+    border-radius: 5px;
+}
+.PlayerCard-skills{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.PlayerCard > .PlayerCard-skills > button {
+    width: 80px;
+    margin-bottom: 5px;
+    background: none;
+    border: solid 1px gray;
+}
+
+button > label {
+    width: 100%;
+}
+
+.input1:checked ~ .button1 {
+    border: solid 3px gray;
+  }
+
+  .input2:checked ~ .button2 {
+    border: solid 3px gray;
+  }
+
+  .input3:checked ~ .button3 {
+    border: solid 3px gray;
+  }
+
+  .input4:checked ~ .button4 {
+    border: solid 3px gray;
+  }
+  
+  input[type=checkbox] {
+    display: none  ;
+  }
+  
+  
