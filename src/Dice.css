@@ -1,0 +1,29 @@
+div.Dice-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Dice-base-roll {
+    margin-bottom: -15px;
+}
+
+div.Dice-modifiers-wrap{
+    display: flex;
+}
+
+.Dice-btn {
+    border: none;
+    background: none;
+    padding-bottom: 20px;
+}
+
+.Dice-img {
+    aspect-ratio: 1/1;
+    max-width: 50px;
+    transition: .20s;
+}
+
+.Dice-btn:active > .Dice-img {
+    transform: translate(0px, -10px) scale(1.25);
+}
